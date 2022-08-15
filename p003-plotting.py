@@ -11,10 +11,8 @@ plt.plot(a, b)
 import cv2
 gray_img = cv2.imread('images/sandstone.tif', 0)
 
-fig = plt.figure()
+plt.imshow(gray_img, cmap="gray")
+plt.show()
 
-ax1 = fig.add_subplot(1,2,1)
-ax1.imshow(gray_img, cmap="gray")
-
-ax2 = fig.add_subplot(1,2,2)
-ax2.hist(gray_img.flat, bins=100, range=(0,255))
+plt.hist(gray_img.flat, bins=100, range=(0,255))
+plt.show()
