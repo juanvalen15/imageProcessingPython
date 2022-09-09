@@ -14,5 +14,5 @@ gray_img = cv2.imread('images/sandstone.tif', 0)
 plt.imshow(gray_img, cmap="gray")
 plt.show()
 
-plt.hist(gray_img.flat, bins=100, range=(0,255))
+plt.hist(gray_img.flat, bins=100, range=(0,255)) # gray_img.flat flattens a 2D array to 1D
 plt.show()
