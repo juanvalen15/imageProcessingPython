@@ -145,8 +145,9 @@ test_img_norm=test_img[:,:,0][:,:,None]
 test_img_input=np.expand_dims(test_img_norm, 0)
 prediction = (model.predict(test_img_input)[0,:,:,0] > 0.2).astype(np.uint8)
 
-test_img_other = cv2.imread('images/largeDS_generatePatches/TESTimages/test_img0.tif', 0)
-#test_img_other = cv2.imread('data/test_images/img8.tif', 0)
+test_img_other = cv2.imread('images/largeDS_generatePatches/TESTimages/test_img100.tif', 0)
+test_img_other = Image.fromarray(test_img_other)
+test_img_other = test_img_other.resize((SIZE, SIZE))
 test_img_other_norm = np.expand_dims(normalize(np.array(test_img_other), axis=1),2)
 test_img_other_norm=test_img_other_norm[:,:,0][:,:,None]
 test_img_other_input=np.expand_dims(test_img_other_norm, 0)
